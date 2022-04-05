@@ -1,8 +1,6 @@
 from fastapi import FastAPI
-
+from routes.empresa import emp
 
 app = FastAPI()
 
-@app.get('/')
-def helloword():
-    return "hello word"
+app.include_router(emp)

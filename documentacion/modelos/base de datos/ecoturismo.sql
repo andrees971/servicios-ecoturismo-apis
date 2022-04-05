@@ -7,12 +7,12 @@ USE ecoturismo;
 DROP TABLE if EXISTS empresa;
 DROP TABLE if EXISTS seguro;
 DROP TABLE if EXISTS ruta;
-DROP TABLE if EXISTS estadia;
+DROP TABLE if EXISTS hospedaje;
 DROP TABLE if EXISTS evento;
 DROP TABLE if EXISTS estado;
 DROP TABLE if EXISTS ruta_estado;
 DROP TABLE if EXISTS user_;
-DROP TABLE if EXISTS usuaro;
+DROP TABLE if EXISTS usuario;
 DROP TABLE if EXISTS guia;
 DROP TABLE if EXISTS reserva;
 DROP TABLE if EXISTS pago;
@@ -47,13 +47,13 @@ CONSTRAINT fk_emp_ruta FOREIGN KEY(empresa_id) REFERENCES empresa(empresa_id),
 CONSTRAINT fk_seguro_ruta FOREIGN KEY(seguro_id) REFERENCES seguro(seguro_id)
 );
 
-CREATE TABLE if NOT EXISTS estadia(
-estadia_id INT PRIMARY KEY,
+CREATE TABLE if NOT EXISTS hospedaje(
+hospedaje_id INT PRIMARY KEY,
 fecha_inicio DATETIME NOT NULL,
 fecha_fin DATETIME NOT NULL,
 precio INT NOT NULL,
 ruta_id INT NOT NULL,
-CONSTRAINT fk_ruta_estadia FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
+CONSTRAINT fk_ruta_hospedaje FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 );
 
 CREATE TABLE if NOT EXISTS evento(
@@ -82,7 +82,7 @@ CONSTRAINT fk_estado_ruta FOREIGN KEY(estado_id) REFERENCES estado(estado_id)
 CREATE TABLE if NOT EXISTS user_(
 user_id INT PRIMARY KEY,
 user_name VARCHAR(50) NOT NULL,
-contraseña VARCHAR(50) NOT NULL,
+contraseÃ±a VARCHAR(50) NOT NULL,
 rool VARCHAR(50) NOT NULL
 );
 
@@ -105,7 +105,7 @@ email VARCHAR(50) NOT NULL,
 telefono VARCHAR(50) NOT NULL,
 foto BLOB,
 user_id INT NOT NULL,
-CONSTRAINT fk_user_usuario FOREIGN KEY(user_id) REFERENCES user_(user_id)
+CONSTRAINT fk_user_guia FOREIGN KEY(user_id) REFERENCES user_(user_id)
 );
 
 CREATE TABLE if NOT EXISTS reserva(
@@ -124,7 +124,7 @@ descuento INT,
 descipcion TEXT,
 fecha DATETIME NOT NULL,
 reserva_id INT NOT NULL,
-CONSTRAINT fk_reserva_pago FOREIGN KEY(reserva_id) REFERENCES reserva(reserva_id),
+CONSTRAINT fk_reserva_pago FOREIGN KEY(reserva_id) REFERENCES reserva(reserva_id)
 );
 
 CREATE TABLE if NOT EXISTS noticia(
@@ -136,3 +136,4 @@ imagen BLOB
 );
 
 
+INSERT INTO empresa (empresa_id, nombre, email, direccion, telefono) VALUES (01,'Fundacion pico pance', 'fundacion@gmail.com', 'Cra 100 # 34 h34', '3184884569')
