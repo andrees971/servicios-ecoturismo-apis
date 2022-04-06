@@ -3,19 +3,22 @@ CREATE DATABASE if NOT EXISTS ecoturismo;
 
 USE ecoturismo;
 
-
-DROP TABLE if EXISTS empresa;
-DROP TABLE if EXISTS seguro;
-DROP TABLE if EXISTS ruta;
-DROP TABLE if EXISTS hospedaje;
-DROP TABLE if EXISTS evento;
-DROP TABLE if EXISTS estado;
-DROP TABLE if EXISTS ruta_estado;
-DROP TABLE if EXISTS user_;
-DROP TABLE if EXISTS usuario;
 DROP TABLE if EXISTS guia;
-DROP TABLE if EXISTS reserva;
 DROP TABLE if EXISTS pago;
+DROP TABLE if EXISTS reserva;
+DROP TABLE if EXISTS hospedaje;
+DROP TABLE if EXISTS negocio;
+DROP TABLE if EXISTS evento;
+DROP TABLE if EXISTS ruta_estado;
+DROP TABLE if EXISTS estado;
+DROP TABLE if EXISTS punto_temporales;
+DROP TABLE if EXISTS punto_estatico;
+DROP TABLE if EXISTS puntoderuta;
+DROP TABLE if EXISTS ruta;
+DROP TABLE if EXISTS empresa ;
+DROP TABLE if EXISTS seguro;
+DROP TABLE if EXISTS usuario;
+DROP TABLE if EXISTS user_;
 DROP TABLE if EXISTS noticia;
 
 CREATE TABLE if NOT EXISTS empresa(
@@ -47,6 +50,28 @@ CONSTRAINT fk_emp_ruta FOREIGN KEY(empresa_id) REFERENCES empresa(empresa_id),
 CONSTRAINT fk_seguro_ruta FOREIGN KEY(seguro_id) REFERENCES seguro(seguro_id)
 );
 
+CREATE TABLE if NOT EXISTS puntoderuta(
+puntoderuta_id INT PRIMARY KEY,
+x VARCHAR(50)
+y VARCHAR(50) 
+ruta_id INT NOT NULL,
+CONSTRAINT fk_ruta_puntoderuta FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
+);
+
+CREATE TABLE if NOT EXISTS punto_temporales(
+punto_temporales_id INT PRIMARY KEY,
+ubicacion VARCHAR(50) 
+puntoderuta_id INT NOT NULL,
+CONSTRAINT fk_puntoderuta_temporal FOREIGN KEY(puntoderuta_id) REFERENCES puntoderuta(puntoderuta_id)
+);
+
+CREATE TABLE if NOT EXISTS punto_estatico(
+punto_estatico_id INT PRIMARY KEY,
+ubicacion VARCHAR(50) 
+puntoderuta_id INT NOT NULL,
+CONSTRAINT fk_puntoderuta_estatico FOREIGN KEY(puntoderuta_id) REFERENCES puntoderuta(puntoderuta_id)
+);
+
 CREATE TABLE if NOT EXISTS hospedaje(
 hospedaje_id INT PRIMARY KEY,
 fecha_inicio DATETIME NOT NULL,
@@ -54,6 +79,14 @@ fecha_fin DATETIME NOT NULL,
 precio INT NOT NULL,
 ruta_id INT NOT NULL,
 CONSTRAINT fk_ruta_hospedaje FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
+);
+
+CREATE TABLE if NOT EXISTS negocio(
+negocio_id INT PRIMARY KEY,
+nombre VARCHAR(50) NOT NULL,
+estado VARCHAR(50) NOT NULL,
+ruta_id INT NOT NULL,
+CONSTRAINT fk_ruta_negocio FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 );
 
 CREATE TABLE if NOT EXISTS evento(
