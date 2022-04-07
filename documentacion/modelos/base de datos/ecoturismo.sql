@@ -52,22 +52,22 @@ CONSTRAINT fk_seguro_ruta FOREIGN KEY(seguro_id) REFERENCES seguro(seguro_id)
 
 CREATE TABLE if NOT EXISTS puntoderuta(
 puntoderuta_id INT PRIMARY KEY,
-x VARCHAR(50)
-y VARCHAR(50) 
+x VARCHAR(50),
+y VARCHAR(50), 
 ruta_id INT NOT NULL,
 CONSTRAINT fk_ruta_puntoderuta FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 );
 
 CREATE TABLE if NOT EXISTS punto_temporales(
 punto_temporales_id INT PRIMARY KEY,
-ubicacion VARCHAR(50) 
+ubicacion VARCHAR(50), 
 puntoderuta_id INT NOT NULL,
 CONSTRAINT fk_puntoderuta_temporal FOREIGN KEY(puntoderuta_id) REFERENCES puntoderuta(puntoderuta_id)
 );
 
 CREATE TABLE if NOT EXISTS punto_estatico(
 punto_estatico_id INT PRIMARY KEY,
-ubicacion VARCHAR(50) 
+ubicacion VARCHAR(50), 
 puntoderuta_id INT NOT NULL,
 CONSTRAINT fk_puntoderuta_estatico FOREIGN KEY(puntoderuta_id) REFERENCES puntoderuta(puntoderuta_id)
 );

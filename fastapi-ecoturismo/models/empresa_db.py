@@ -9,3 +9,5 @@ empresa = Table("empresa", meta,
                 Column("direccion", String(50)),
                 Column("telefono", String(50)),
                 Column("foto", LargeBinary))
+
+meta.create_all(engine)
