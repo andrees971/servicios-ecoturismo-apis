@@ -33,6 +33,7 @@ async def update_data(id:int,user: User):
     ).where(users.c.id == id))
     return conn.execute(users.select()).fetchall()
 
-@user.get("/")
-async def read_data():
+@user.delete("/")
+async def delete_data():
+    conn.execute(users.delete().where(users.c.id == id))
     return conn.execute(users.select()).fetchall()
