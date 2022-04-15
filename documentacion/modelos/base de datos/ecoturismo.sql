@@ -77,6 +77,7 @@ hospedaje_id INT PRIMARY KEY,
 fecha_inicio DATETIME NOT NULL,
 fecha_fin DATETIME NOT NULL,
 precio INT NOT NULL,
+estado VARCHAR(50),
 ruta_id INT NOT NULL,
 CONSTRAINT fk_ruta_hospedaje FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 );
@@ -84,7 +85,7 @@ CONSTRAINT fk_ruta_hospedaje FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 CREATE TABLE if NOT EXISTS negocio(
 negocio_id INT PRIMARY KEY,
 nombre VARCHAR(50) NOT NULL,
-estado VARCHAR(50) NOT NULL,
+estado VARCHAR(50),
 ruta_id INT NOT NULL,
 CONSTRAINT fk_ruta_negocio FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 );
@@ -170,3 +171,4 @@ imagen BLOB
 
 
 INSERT INTO empresa (empresa_id, nombre, email, direccion, telefono) VALUES (01,'Fundacion pico pance', 'fundacion@gmail.com', 'Cra 100 # 34 h34', '3184884569')
+INSERT INTO seguro (seguro_id, nombre, fecha_inicio, fecha_fin, precio) VALUES (01,'Ecoseguro', '13/04/22', '14/04/22', '25000')
