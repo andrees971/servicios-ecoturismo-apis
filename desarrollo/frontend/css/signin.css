@@ -1,0 +1,71 @@
+.form-l {
+    width: 100%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #ffff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+.contenedor{
+    display: flex;
+}
+
+.login{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-l{
+    border-radius: 30px;
+    margin: 10px 0;
+}
+.log-emp{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.logo-f{
+    margin: auto;
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+}
+.button-l{
+    margin: 10px;
+    padding: 9px 25px;
+    background-color: green;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.ft_log{
+    margin-left: 30px;
+    width: 60%;
+    height: 100%;
+}
+.log-in{
+    height: 50%;
+    width: 90%;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 863px) {
+    .ft_log{
+        width: 0%;
+    }
+    .contenedor{
+        display: block;
+        margin: 0px;
+    }
+    .login{
+        margin:auto;
+    }
+    
+}

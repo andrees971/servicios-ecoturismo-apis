@@ -1,0 +1,42 @@
+
+.contenedor{
+    margin: auto 220px auto 50px;
+}
+h1, p{
+    color: white;
+    margin: 20px auto;
+}
+
+p{
+    text-align: center;
+}
+
+.align_der{
+    text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+    .contenedor{
+        margin: auto 40px;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .contenedor{
+        margin: auto 20px;
+    }
+
+    h1{
+        margin: 10px auto;
+    }
+    p{
+        margin: 0px auto;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .container{
+        min-height: 100vh;
+        height: 100%;
+    }
+}

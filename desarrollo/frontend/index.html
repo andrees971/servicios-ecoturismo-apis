@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+
+    <SCript type="text/javascript" src="js/funcion-color.js" ></SCript>
+
+    <title>EcoWeb|Home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img  class="logo" src="images/logoEcoWeb.png" alt="logo" >
+        <nav class="menu spread">
+            <ul class="nav_links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="page/about.html">About</a></li>
+                <li><a href="page/routes.html">Routes</a></li>
+                <li><a href="page/events.html ">Events</a></li>
+                <li><a href="page/signUp.html">Sign Up</a></li>
+                
+                <a class="signIn" href="page/signIn.html"><button>Sign In</button></a>
+            </ul>
+        </nav>
+        </div>
+        <img src="images/list.svg" alt="" class="menu-list">
+        <div class="row">
+            <div class="eslogan">
+                <h1 id="espacio_der">
+                    <span class="textOne" id="colorOne">Y</span><span class="textSecond"id="colorSecond">our New </span> 
+                    <span class="textOne" id="colorOne">Lifestyle </span> 
+                </h1>
+                <h1 id="espacio_izq">
+                    <span class="textSecond" id="colorSecond">Y</span><span class="textSecond"id="colorSecond">our </span>
+                    <span class="textOne" id="colorOne">Healthier </span><span class="textSecond"id="colorSecond">Life </span>
+                </h1>
+                <button class="bt_explore" type="submit">Explore</button>
+            </div>
+        </div>
+        
+  
+    </div>
+    
+        <!-------Imagenes Home start-------------------------------------------->
+        
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!----------SLIDE IMAGANENES start-------------------------------------------->
+                <div class="slide first">
+                    <img src="images/pico-pance.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/pico-pance2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/pico-pance.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="images/pico-pance2.jpg" alt="">
+                </div>
+                <!----------SLIDE IMAGANENES END-------------------------------------------->
+                <!--AUTOMATIC NAVIGATION START-->
+                <div class="navigationAuto">
+                    <div class="autoBtn1"></div>
+                    <div class="autoBtn2"></div>
+                    <div class="autoBtn3"></div>
+                    <div class="autoBtn4"></div>
+                </div>
+                <!--AUTOMATIC NAVIGATION END-->
+            </div>
+                <!--MANUAL NAVIGATION START-->
+                <div class="navigationManual">
+                    <label for="radio1" class="manualBtn"></label>
+                    <label for="radio2" class="manualBtn"></label>
+                    <label for="radio3" class="manualBtn"></label>
+                    <label for="radio4" class="manualBtn"></label>
+                </div>
+                <!--MANUAL NAVIGATION END-->
+        </div>
+        <!-------Imagenes Home end-------------------------------------------->
+    <script src="js/menu.js"></script>
+
+    
+</body>
+</html>

@@ -46,6 +46,8 @@ distancia INT NOT NULL,
 descripcion TEXT,
 empresa_id INT NOT NULL,
 seguro_id INT NOT NULL,
+ubicacion VARCHARACTER(50) NOT NULL,
+fecha DATETIME NOT NULL,
 CONSTRAINT fk_emp_ruta FOREIGN KEY(empresa_id) REFERENCES empresa(empresa_id),
 CONSTRAINT fk_seguro_ruta FOREIGN KEY(seguro_id) REFERENCES seguro(seguro_id)
 );
@@ -92,6 +94,7 @@ CONSTRAINT fk_ruta_negocio FOREIGN KEY(ruta_id) REFERENCES ruta(ruta_id)
 
 CREATE TABLE if NOT EXISTS evento(
 evento_id INT PRIMARY KEY,
+nombre VARCHAR(50) NOT NULL,
 fecha DATETIME NOT NULL,
 descripcion TEXT,
 ruta_id INT NOT NULL,
@@ -170,5 +173,5 @@ imagen BLOB
 );
 
 
-INSERT INTO empresa (empresa_id, nombre, email, direccion, telefono) VALUES (01,'Fundacion pico pance', 'fundacion@gmail.com', 'Cra 100 # 34 h34', '3184884569')
-INSERT INTO seguro (seguro_id, nombre, fecha_inicio, fecha_fin, precio) VALUES (01,'Ecoseguro', '13/04/22', '14/04/22', '25000')
+INSERT INTO empresa (empresa_id, nombre, email, direccion, telefono) VALUES (01,'Fundacion pico pance', 'fundacion@gmail.com', 'Cra 100 # 34 h34', '3184884569');
+INSERT INTO seguro (seguro_id, nombre, fecha_inicio, fecha_fin, precio) VALUES (01,'Ecoseguro', '13/04/22', '14/04/22', '25000');
